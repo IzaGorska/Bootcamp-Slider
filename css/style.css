@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+:root {
+    --dark-blue: hsl(240, 38%, 20%);
+    --grayish-blue: hsl(240, 18%, 77%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 32px;
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+}
+
+div.wrapper {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+    height: 100%;
+}
+
+div.person {
+    position: relative;
+    background-image: url('../images/pattern-bg.svg');
+    background-repeat: no-repeat;
+    background-position: top 40% center;
+    background-size: 80% 80%;
+}
+
+div.person>img {
+    height: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 5px 25px var(--grayish-blue);
+
+}
+
+div.person div.change {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30px;
+    grid-gap: 30px;
+    align-items: center;
+    position: absolute;
+    top: 76%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 7px 15px;
+    background-color: white;
+    border-radius: 30px;
+}
+
+div.quote {
+    background-image: url('../images/pattern-quotes.svg'), url('../images/pattern-curve.svg');
+    background-repeat: no-repeat;
+    background-position: top center, bottom -30px left;
+    background-size: 60px, 100%;
+    margin-top: 20px;
+}
+
+div.quote h3 {
+    font-size: 0.5em;
+    font-weight: 300;
+    text-align: center;
+    padding: 40px;
+}
+
+div.quote h4 {
+    font-size: 0.5em;
+    font-weight: 700;
+    text-align: center;
+}
+
+div.quote h5 {
+    font-size: 0.5em;
+    font-weight: 300;
+    text-align: center;
+    color: var(--grayish-blue);
+}
+
+.active {
+    display: block;
+}
+
+@media(min-width: 1024px) {
+    div.wrapper {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr;
+        grid-template-areas: 'quote person';
+
+    }
+
+    div.person {
+        grid-area: person;
+        background-position: top 40% center;
+        background-size: 95% 70%;
+    }
+
+    div.person>img {
+        height: 55%;
+    }
+
+    div.person div.change {
+        left: 30%;
+    }
+
+    div.quote {
+        background-position: top left 300px, bottom -80px left;
+        background-size: 120px, 100%;
+        height: 60%;
+        width: 65%;
+        position: absolute;
+        top: 40%;
+        margin-top: 0px;
+        padding-left: 150px;
+    }
+
+
+    div.quote h3 {
+        font-size: .8em;
+        text-align: left;
+        line-height: 1.6em;
+    }
+
+    div.quote h4 {
+        float: left;
+        font-size: 0.6em;
+        text-align: left;
+        padding-left: 40px;
+        margin-right: 30px;
+    }
+
+    div.quote h5 {
+        font-size: 0.6em;
+        text-align: left;
+    }
+}
